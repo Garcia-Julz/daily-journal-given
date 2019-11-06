@@ -14,34 +14,49 @@
     <h1>Daily Journal</h1>
 
     <form>
+        <input type="hidden" id="recipeId" value="" />
         <fieldset>
             <label for="date-input">Date of entry</label>
-            <input type="date" name="date-input">
+            <input id="dateValue" type="date" name="date-input">
         </fieldset>
         <fieldset>
             <label for="concept-input">Concepts covered</label>
-            <input type="text" name="concept-input">
+            <input id="conceptValue" type="text" name="concept-input" maxlength="145">
         </fieldset>
         <fieldset>
             <label for="entry-input">Journal entry</label>
-            <textarea name="entry-input"></textarea>
+            <textarea id="textValue" name="entry-input" maxlength="145"></textarea>
         </fieldset>
         <fieldset>
             <label for="mood-input">Mood</label>
-            <select class="mood" name="mood-input">
+            <select id="moodValue" class="mood" name="mood-input">
                 <option value="Amazing">Amazing</option>
                 <option value="Great">Great</option>
                 <option value="Ok">Ok</option>
             </select>
         </fieldset>
-        <button>Record Journal Entry</button>
     </form>
 
-    <article class="entryLog">
+    <button id="recordJournalEntry">Record Journal Entry</button>
+
+    <hr>
+
+    <fieldset id="mood-filter">
+        <legend>My Journals Entries by Mood</legend>
+        <input id="mood--1" type="radio" name="moodStatus" value="Amazing">
+        <label for="mood--1">Amazing</label>
+        <input id="mood--2" type="radio" name="moodStatus" value="Great">
+        <label for="mood--2">Great</label>
+        <input id="mood--3" type="radio" name="moodStatus" value="Ok">
+        <label for="mood--3">Ok</label>
+    </fieldset>
+
+    <article class="entryLog" id="entryList">
 
     </article>
 
     <script src="./scripts/journal.js" type="module"></script>
+
 </body>
 
 </html>

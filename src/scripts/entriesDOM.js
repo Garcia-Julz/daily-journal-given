@@ -5,11 +5,12 @@ import entryComponent from "./entryComponent.js"
 
     Arguments: entries (array of objects)
 */
-// export default {
-const renderDom = {
-  renderJournalEntries(entries) {
+export default {
+    renderJournalEntries: (entries) => {
     let HtmlForAllEntries = ""
+    // console.log("entries test", entries)
     entries.forEach(entry => {
+      // console.log("entry", entry)
       const entryHtml = entryComponent.makeJournalEntryComponent(entry)
       HtmlForAllEntries += entryHtml
     })
@@ -17,6 +18,3 @@ const renderDom = {
     logArticle.innerHTML = HtmlForAllEntries
   }
 }
-// }
-
-export default renderDom
